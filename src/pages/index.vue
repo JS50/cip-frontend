@@ -248,11 +248,21 @@ main{
 
 #vListItem1{
   font-family: poppinsLight !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+#vListItem1 + #vListItem1 {
+  margin-top: 10px !important;
 }
 #vListItem2{
   font-family: poppinsLight !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
-
+#vListItem2 + #vListItem2 {
+  margin-top: 10px !important;
+}
 #vButton{
   margin-top: 20px !important;
   margin-left: 7.5px !important;
