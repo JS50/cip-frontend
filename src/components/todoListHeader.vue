@@ -6,7 +6,7 @@ import axios from "axios";
 
 const queryClient = useQueryClient();
 
-const mutation = useMutation({
+const {mutate: addTodo} = useMutation({
     mutationFn: () => {
       return axios.post('http://127.0.0.1:89/todos',{
         task: newTodoName.value,
@@ -23,7 +23,7 @@ const mutation = useMutation({
         }
       )
     },
-    onError: (error) => {
+    onError: () => {
         errorMessage.value= 'Fehler. Bitte benenne erneut einen Task.';
     }
 });
@@ -53,7 +53,7 @@ let errorMessage = ref('');
         size="27"
         placeholder="Neuer Task.."
     />
-    <button id="button1" class="icon-button" @click = "mutation.mutate()"></button>
+    <button id="button1" class="icon-button" @click = "addTodo()"></button>
   </div>
   <div id="div3" v-if="errorMessage">
     <a id="a2">{{ errorMessage }}</a>
