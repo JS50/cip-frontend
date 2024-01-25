@@ -39,6 +39,12 @@ const showTodos = computed( () => {
   return !(props.todos.length === 0);
 });
 
+
+
+let dateStyler = (isoDateString) => {
+  let returnDate = new Date(isoDateString).toLocaleString().slice(0,-3) ;
+  return `${returnDate} Uhr`;
+}
 </script>
 
 <template>
@@ -60,7 +66,7 @@ const showTodos = computed( () => {
           <button id="button1" :key="todo.id" class="icon-button" @click = "mutationDelete.mutate(todo.id)"></button>
         </template>
         <v-list-item-title v-text="todo.task"></v-list-item-title>
-        <v-list-item-subtitle v-text="todo.uhrzeit"></v-list-item-subtitle>
+        <v-list-item-subtitle v-text="dateStyler(todo.created_at)"></v-list-item-subtitle>
       </v-list-item>
     </v-list>
   </div>
@@ -68,17 +74,14 @@ const showTodos = computed( () => {
 </template>
 
 <style scoped>
-@font-face {
-  font-family: poppinsLight;
-  src: url("/fonts/Poppins/Poppins-Light.woff2");
-}
+
 #div1{
   margin-top: 6px;
   margin-bottom: -20px;
 }
 #a1{
-  font-family: poppinsLight;
-  font-size: small;
+  font-family: Poppins, sans-serif;
+  font-weight: 300;
   color:white;
   margin-left: 5px;
 }
@@ -99,7 +102,8 @@ const showTodos = computed( () => {
   height: 20px;
 }
 #vListItem1{
-  font-family: poppinsLight !important;
+  font-family: Poppins, sans-serif !important;
+  font-weight: 300 !important;
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }

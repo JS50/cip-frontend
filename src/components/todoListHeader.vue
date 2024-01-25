@@ -10,8 +10,7 @@ const mutation = useMutation({
     mutationFn: () => {
       return axios.post('http://127.0.0.1:89/todos',{
         task: newTodoName.value,
-        done:false,
-        uhrzeit:getTimeStamp()
+        done:false
       })
     },
     onSuccess: (data) => {
@@ -25,16 +24,9 @@ const mutation = useMutation({
       )
     },
     onError: (error) => {
-        errorMessage.value=error.response.data.message;
+        errorMessage.value= 'Fehler. Bitte benenne erneut einen Task.';
     }
 });
-let getTimeStamp = () => {
-    const today = new Date();
-    const date = today.getDate()+'.'+(today.getMonth()+1)+'.'+today.getFullYear();
-    const time = today.getHours() + ":" + today.getMinutes();
-    const dateTime = date +' '+ time+' Uhr';
-    return dateTime;
-}
 
 let newTodoName = ref('');
 
@@ -69,10 +61,6 @@ let errorMessage = ref('');
 </template>
 
 <style scoped>
-@font-face {
-  font-family: poppinsBold;
-  src: url("/fonts/Poppins/Poppins-Bold.woff2");
-}
 
 #div1 {
   display: flex;
@@ -84,7 +72,8 @@ let errorMessage = ref('');
 }
 
 #a1{
-  font-family: poppinsBold;
+  font-family: Poppins,sans-serif;;
+  font-weight: bold;
   color: white;
 }
 #div2{
