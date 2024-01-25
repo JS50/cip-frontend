@@ -9,7 +9,7 @@ const props = defineProps(['message', 'bigText']);
   <div id="div1">
     <img :src="favicon" alt="" width="100">
     <h1 v-if="bigText" id="text"> {{ message }} </h1>
-    <a v-if="!bigText" id="text"> {{ message }} </a>
+    <a v-else id="text"> {{ message }} </a>
   </div>
 </template>
 
