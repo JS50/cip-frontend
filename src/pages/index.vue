@@ -6,6 +6,7 @@ import axios from "axios";
 import TodoList from "@/components/todoList.vue";
 import DeleteTodos from "@/components/deleteTodos.vue";
 import PlaceholderTodos from "@/components/placeholderTodos.vue";
+import EmptyTodos from "@/components/emptyTodos.vue";
 
 
 const { isError, data:allTodosRef, error } = useQuery({
@@ -36,7 +37,7 @@ const noTodos = computed( () => {
       <todo-list-header/>
 
       <div v-if="noTodos">
-        <placeholder-todos message="What do you want to do today?" :big-text="false"/>
+        <empty-todos/>
       </div>
 
       <div id="div3" v-else-if="!noTodos">
@@ -56,7 +57,7 @@ const noTodos = computed( () => {
 
 <style scoped>
 main{
-  background: black;
+  background: #121212;
   width: 100vw;
   min-height: 100vh;
 }

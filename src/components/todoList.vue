@@ -118,7 +118,7 @@ input[type="checkbox"]:checked{
   width: 20px;
   height: 20px;
   border-color: #8685E7;
-  background-image: url("src/assets/Vector.png");
+  background-image: url("src/assets/Vector.svg");
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: center;
@@ -154,7 +154,7 @@ input[type="checkbox"]:checked{
 }
 
 #button1{
-  background-image:url("src/assets/delete-10431.png") ;
+  background-image:url("src/assets/delete-10431.svg") ;
   background-size: 20px;
   width: 20px;
   height: 20px;
