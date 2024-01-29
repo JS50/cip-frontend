@@ -83,7 +83,7 @@ const showDialog = (todoId) => {
             <input id="checkbox"  type="checkbox" :key="todo.id" :checked="todo.done" @input="toggleDone(todo.id)">
         </template>
         <template v-slot:append>
-          <button id="button1" :key="todo.id" class="icon-button" @click = "showDialog(todo.id)"></button>
+          <button id="button1" :key="todo.id" @click = "showDialog(todo.id)"></button>
         </template>
     </v-card>
 
@@ -154,7 +154,7 @@ input[type="checkbox"]:checked{
 }
 
 #button1{
-  background-image:url("/favicon.ico") ;
+  background-image:url("src/assets/delete-10431.png") ;
   background-size: 20px;
   width: 20px;
   height: 20px;
