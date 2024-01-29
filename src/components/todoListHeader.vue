@@ -25,6 +25,8 @@ const {mutate: addTodo} = useMutation({
     },
     onError: () => {
         errorMessage.value= 'Fehler. Bitte benenne erneut einen Task.';
+        newTodoName.value = '';
+
     }
 });
 

@@ -1,6 +1,6 @@
 <script setup>
-import {QueryClient, useMutation, useQuery} from "@tanstack/vue-query";
-import {computed, ref, watch } from 'vue'
+import {useQuery} from "@tanstack/vue-query";
+import {computed} from 'vue'
 import todoListHeader from "@/components/todoListHeader.vue";
 import axios from "axios";
 import TodoList from "@/components/todoList.vue";
@@ -57,9 +57,8 @@ const noTodos = computed( () => {
 <style scoped>
 main{
   background: black;
-  position: absolute;
-  width: 100%;
-  min-height: 100%;
+  width: 100vw;
+  min-height: 100vh;
 }
 
   #div3 {
