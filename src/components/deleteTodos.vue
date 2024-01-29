@@ -26,13 +26,9 @@ const mutation = useMutation({
 </template>
 
 <style scoped>
-@font-face {
-  font-family: poppinsMedium;
-  src: url("/fonts/Poppins/Poppins-Medium.woff2");
-}
 
 #vButton{
-  font-family: poppinsMedium;
+  font-family: Poppins, sans-serif;
   font-size: small;
   margin-left: 0.5px !important;
   margin-top: 15px;

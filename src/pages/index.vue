@@ -33,14 +33,14 @@ const noTodos = computed( () => {
 
 <template>
   <main>
-    <div v-if="(allTodosRef)" class="d-flex flex-column pa-2 ga-4 m-auto">
+    <div v-if="(allTodosRef)" class="d-flex flex-column mx-4 px-2 ga-4 m-auto">
       <todo-list-header/>
 
       <div v-if="noTodos">
         <empty-todos/>
       </div>
 
-      <div id="div3" v-else-if="!noTodos">
+      <div v-else-if="!noTodos">
         <todoList title="Offen" :todos="openTodos"/>
         <todoList title="Abgeschlossen" :todos="doneTodos"/>
         <delete-todos/>
@@ -61,11 +61,4 @@ main{
   width: 100vw;
   height: 100vh;
 }
-
-  #div3 {
-    display: flex;
-    flex-direction: column;
-    margin-right: 15px;
-    margin-left: 15px;
-  }
 </style>

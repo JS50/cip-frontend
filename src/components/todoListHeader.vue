@@ -46,13 +46,12 @@ let errorMessage = ref('');
     <a id="title" class="ml-2"> TODO </a>
   </div>
 
-  <div class="d-flex justify-center align-center ga-4">
+  <div class="d-flex align-center ga-4">
     <input
         id="inputTodoName"
-        class="pt-2 pr-4 pb-2 pl-4"
+        class="pt-2 pr-4 pb-2 pl-4 w-100"
         type="text"
         v-model=newTodoName
-        size=""
         placeholder="Neuer Task.."
     />
     <button id="submitButton" @click = "addTodo()"></button>
@@ -84,9 +83,6 @@ let errorMessage = ref('');
   border-style: solid;
   border-width: 1px;
   border-radius: 4px;
-
-  width: 291px;
-  min-height: 43px;
 }
 
 #submitButton{

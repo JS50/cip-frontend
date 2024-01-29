@@ -59,16 +59,14 @@ const showDialog = (todoId) => {
 </script>
 <template>
   <div v-if="showTodos">
-    <div id="categoryDiv" class="mb-1">
+    <div class="mb-1">
       <a id="todoCategoryTitle"> {{ title }}</a>
     </div>
     <div class="d-flex flex-column justify-center align-center">
       <v-card
           id="todoCard"
-          class="mb-4"
+          class="mb-4 align-self-stretch"
           color="#363636"
-          height="72"
-          width="327"
           v-for="(todo) in todos"
       >
         <template #title>
