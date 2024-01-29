@@ -93,6 +93,6 @@ let errorMessage = ref('');
   color: #9004fc;
   font-family: Poppins, sans-serif;
   font-weight: 500;
-  font-size: 16.5px;
+  font-size: 18px;
 }
 </style>
