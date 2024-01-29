@@ -59,10 +59,10 @@ const showDialog = (todoId) => {
 </script>
 <template>
   <div id="div1" v-if="showTodos">
-    <a id="a1"> {{ title }}</a>
+    <a id="todoCategoryTitle"> {{ title }}</a>
     <v-card
         id="todoCard"
-        class="rounded ma-4"
+        class="rounded mb-4"
         color="#363636"
         height="72"
         width="327"
@@ -83,7 +83,7 @@ const showDialog = (todoId) => {
             <input id="checkbox"  type="checkbox" :key="todo.id" :checked="todo.done" @input="toggleDone(todo.id)">
         </template>
         <template v-slot:append>
-          <button id="button1" :key="todo.id" @click = "showDialog(todo.id)"></button>
+          <button id="deleteButton" :key="todo.id" @click = "showDialog(todo.id)"></button>
         </template>
     </v-card>
 
@@ -142,18 +142,16 @@ input[type="checkbox"]:checked{
   line-height: 21px;
   letter-spacing: -0.32px;
 }
-#div1{
-  margin-top: 6px;
-  margin-bottom: -20px;
-}
-#a1{
+
+#todoCategoryTitle{
   font-family: Poppins, sans-serif;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 21.07px;
   font-weight: 300;
-  color:white;
-  margin-left: 5px;
 }
 
-#button1{
+#deleteButton{
   background-image:url("src/assets/delete-10431.svg") ;
   background-size: 20px;
   width: 20px;
