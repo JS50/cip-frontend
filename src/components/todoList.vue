@@ -2,8 +2,7 @@
 import {useMutation, useQueryClient} from "@tanstack/vue-query";
 import {computed, ref} from 'vue';
 import axios from "axios";
-import DialogNew from "@/components/dialogNew.vue";
-
+import DialogNew from "@/components/dialog.vue";
 
 const queryClient = useQueryClient();
 
@@ -51,8 +50,8 @@ let dateStyler = (isoDateString) => {
 
 const dialog = ref(null);
 const showDialog = (todoId) => {
-  dialog.value.showModal();
   todoDeleteId.value = todoId;
+  dialog.value.showModal();
 }
 
 
@@ -127,26 +126,6 @@ input[type="checkbox"]:checked{
   background-position: center;
 }
 
-#todoCard{
-  border-width: 1.5px;
-  border-radius: 4px;
-}
-#todoTitle{
-  font-family: Lato, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 21px;
-  letter-spacing: -0.32px;
-  color: #FFFFFF;
-}
-#todoTimestamp{
-  font-family: Lato, sans-serif;
-  color: #AFAFAF;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: -0.32px;
-}
-
 #todoCategoryTitle{
   font-family: Poppins, sans-serif;
   color: #FFFFFF;
@@ -155,11 +134,32 @@ input[type="checkbox"]:checked{
   font-weight: 300;
 }
 
+#todoCard{
+  border-width: 1.5px;
+  border-radius: 4px;
+}
+
+#todoTitle{
+  font-family: Lato, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #FFFFFF;
+}
+
+#todoTimestamp{
+  font-family: Lato, sans-serif;
+  color: #AFAFAF;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+}
+
 #deleteButton{
   background-image:url("src/assets/delete-10431.svg") ;
   background-size: 20px;
   width: 20px;
   height: 20px;
 }
-
 </style>

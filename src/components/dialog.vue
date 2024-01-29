@@ -4,8 +4,8 @@ import { ref } from 'vue';
 const dialog = ref(null);
 const visible = ref(false);
 const showModal = () => {
-  dialog.value.showModal();
   visible.value = true;
+  dialog.value.showModal();
 }
 
 defineExpose({
@@ -47,5 +47,4 @@ defineExpose({
   background-color: #9004fc;
   opacity: 0.25;
 }
-
 </style>

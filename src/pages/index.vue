@@ -32,7 +32,7 @@ const noTodos = computed( () => {
 
 <template>
   <main>
-    <div v-if="(allTodosRef)" class="d-flex flex-column mx-4 px-2 ga-4 m-auto">
+    <div v-if="(allTodosRef)" class="d-flex flex-column mx-4 px-2 ga-4">
       <todo-list-header/>
 
       <div v-if="noTodos">

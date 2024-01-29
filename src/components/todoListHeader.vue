@@ -9,7 +9,7 @@ const {mutate: addTodo} = useMutation({
     mutationFn: () => {
       return axios.post('http://127.0.0.1:89/todos',{
         task: newTodoName.value,
-        done:false
+        done: false
       })
     },
     onSuccess: (data) => {
@@ -25,14 +25,12 @@ const {mutate: addTodo} = useMutation({
     onError: () => {
         errorMessage.value= 'Fehler. Bitte benenne erneut einen Task.';
         newTodoName.value = '';
-
     }
 });
 
 let newTodoName = ref('');
 
 let errorMessage = ref('');
-
 </script>
 
 <template>
@@ -56,7 +54,7 @@ let errorMessage = ref('');
     />
     <button id="submitButton" @click = "addTodo()"></button>
   </div>
-  <div class="d-flex align-center justify-center" v-if="errorMessage">
+  <div v-if="errorMessage" class="d-flex align-center justify-center">
     <a id="errorMessage">{{ errorMessage }}</a>
   </div>
 </template>
@@ -97,5 +95,4 @@ let errorMessage = ref('');
   font-weight: 500;
   font-size: 16.5px;
 }
-
 </style>
