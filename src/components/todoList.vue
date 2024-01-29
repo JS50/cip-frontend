@@ -137,23 +137,3 @@ const showDialog = (todoId) => {
 }
 
 </style>
-
-<!--<v-list id="vList1" density="compact" bg-color="#424242" class="mx-auto pa-2 mb-5 rounded-lg" witdh="290">-->
-<!--<v-list-item-->
-<!--    id="vListItem1"-->
-<!--    v-for="(todo) in todos"-->
-<!--    :value="todo"-->
-<!--    density="comfortable"-->
-<!--    height="50"-->
-<!--    border="border"-->
-<!--&gt;-->
-<!--  <template v-slot:prepend>-->
-<!--    <input id="input1" type="checkbox" :key="todo.id" :checked="todo.done" @input="toggleDone(todo.id)">-->
-<!--  </template>-->
-<!--  <template v-slot:append>-->
-<!--    <button id="button1" :key="todo.id" class="icon-button" @click = "showDialog(todo.id)"></button>-->
-<!--  </template>-->
-<!--  <v-list-item-title v-text="todo.task"></v-list-item-title>-->
-<!--  <v-list-item-subtitle v-text="dateStyler(todo.created_at)"></v-list-item-subtitle>-->
-<!--</v-list-item>-->
-<!--</v-list>-->
