@@ -60,25 +60,33 @@ const showDialog = (todoId) => {
 <template>
   <div id="div1" v-if="showTodos">
     <a id="a1"> {{ title }}</a>
-    <v-list id="vList1" density="compact" bg-color="#424242" class="mx-auto pa-2 mb-5 rounded-lg" witdh="290">
-      <v-list-item
-          id="vListItem1"
-          v-for="(todo) in todos"
-          :value="todo"
-          density="comfortable"
-          height="50"
-          border="border"
-      >
+    <v-card
+        id="todoCard"
+        class="rounded ma-4"
+        color="#363636"
+        height="72"
+        width="327"
+        v-for="(todo) in todos"
+    >
+        <template #title>
+          <a
+              id="todoTitle"
+          >{{todo.task}}</a>
+        </template>
+        <template #subtitle>
+          <a
+              id="todoTimestamp"
+          >{{dateStyler(todo.created_at)}}
+          </a>
+        </template>
         <template v-slot:prepend>
-          <input id="input1" type="checkbox" :key="todo.id" :checked="todo.done" @input="toggleDone(todo.id)">
+            <input id="checkbox"  type="checkbox" :key="todo.id" :checked="todo.done" @input="toggleDone(todo.id)">
         </template>
         <template v-slot:append>
           <button id="button1" :key="todo.id" class="icon-button" @click = "showDialog(todo.id)"></button>
         </template>
-        <v-list-item-title v-text="todo.task"></v-list-item-title>
-        <v-list-item-subtitle v-text="dateStyler(todo.created_at)"></v-list-item-subtitle>
-      </v-list-item>
-    </v-list>
+    </v-card>
+
   </div>
   <dialog-new ref="dialog">
     <div id="dialogBox">
@@ -93,7 +101,23 @@ const showDialog = (todoId) => {
 </template>
 
 <style scoped>
-
+#todoCard{
+  border-width: 1.5px;
+}
+#todoTitle{
+  font-family: Lato, sans-serif;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+}
+#todoTimestamp{
+  font-family: Lato, sans-serif;
+  color: #AFAFAF;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+}
 #div1{
   margin-top: 6px;
   margin-bottom: -20px;
@@ -105,29 +129,31 @@ const showDialog = (todoId) => {
   margin-left: 5px;
 }
 
-#vList1{
-  margin-top: 5px;
-}
-
-#input1{
-  margin-right: 10px;
-  margin-left: -5px;
-}
-
 #button1{
   background-image:url("/favicon.ico") ;
   background-size: 20px;
   width: 20px;
   height: 20px;
 }
-#vListItem1{
-  font-family: Poppins, sans-serif !important;
-  font-weight: 300 !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-}
 
-#vListItem1 + #vListItem1 {
-  margin-top: 10px !important;
-}
 </style>
+
+<!--<v-list id="vList1" density="compact" bg-color="#424242" class="mx-auto pa-2 mb-5 rounded-lg" witdh="290">-->
+<!--<v-list-item-->
+<!--    id="vListItem1"-->
+<!--    v-for="(todo) in todos"-->
+<!--    :value="todo"-->
+<!--    density="comfortable"-->
+<!--    height="50"-->
+<!--    border="border"-->
+<!--&gt;-->
+<!--  <template v-slot:prepend>-->
+<!--    <input id="input1" type="checkbox" :key="todo.id" :checked="todo.done" @input="toggleDone(todo.id)">-->
+<!--  </template>-->
+<!--  <template v-slot:append>-->
+<!--    <button id="button1" :key="todo.id" class="icon-button" @click = "showDialog(todo.id)"></button>-->
+<!--  </template>-->
+<!--  <v-list-item-title v-text="todo.task"></v-list-item-title>-->
+<!--  <v-list-item-subtitle v-text="dateStyler(todo.created_at)"></v-list-item-subtitle>-->
+<!--</v-list-item>-->
+<!--</v-list>-->
