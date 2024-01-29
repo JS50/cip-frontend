@@ -101,6 +101,30 @@ const showDialog = (todoId) => {
 </template>
 
 <style scoped>
+input[type="checkbox"]{
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 1.5px solid #FFFFFF;
+  appearance: none;
+  background-color: #363636;
+  outline: none;
+  transition: outline 0.1s
+}
+
+input[type="checkbox"]:checked{
+  content: 's';
+  width: 20px;
+  height: 20px;
+  border-color: #8685E7;
+  background-image: url("src/assets/Vector.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
 #todoCard{
   border-width: 1.5px;
 }
