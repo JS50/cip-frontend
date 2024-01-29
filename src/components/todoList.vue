@@ -92,12 +92,12 @@ const showDialog = (todoId) => {
 
   </div>
   <dialog-new ref="dialog">
-    <div id="dialogBox">
-      <a class="d-flex justify-center">Bist du dir sicher?</a>
-      <div class="d-flex justify-center align-content-lg-space-around">
-        <button value="" class="ma-1 pl-1 pr-1 rounded bg-grey" @click="deleteTodo(todoDeleteId)">Löschen
+    <div class="pa-1">
+      <a class="d-flex justify-center ma-1 px-1">Bist du dir sicher?</a>
+      <div class="d-flex justify-space-between">
+        <button class="mx-2 mb-3 px-1 rounded" style="background-color: #8685E7" @click="deleteTodo(todoDeleteId)">Löschen
         </button>
-        <button class="ma-1 pl-1 pr-1 bg-grey rounded">Zurück</button>
+        <button class="mx-2 mb-3 px-1 rounded" style="background-color: #8685E7">Zurück</button>
       </div>
     </div>
   </dialog-new>
@@ -133,10 +133,11 @@ input[type="checkbox"]:checked{
 }
 #todoTitle{
   font-family: Lato, sans-serif;
-  color: #FFFFFF;
+  font-weight: 400;
   font-size: 16px;
   line-height: 21px;
   letter-spacing: -0.32px;
+  color: #FFFFFF;
 }
 #todoTimestamp{
   font-family: Lato, sans-serif;

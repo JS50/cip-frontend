@@ -16,8 +16,8 @@ defineExpose({
 <template>
   <dialog
       ref="dialog"
-      class="bg-purple-darken-4 rounded"
       id="dialogBox"
+      class="rounded"
   >
     <form
         method="dialog"
@@ -30,18 +30,22 @@ defineExpose({
 
 <style scoped>
 #dialogBox {
-  font-family: Poppins, sans-serif !important;
-  font-weight: 400 !important;
+  font-family: Poppins, sans-serif ;
+  font-weight: 400;
+  font-size: 22px;
   left: 0;
   right: 0;
   top: 0;
   bottom: 30%;
   margin: auto;
-  position: absolute;
+  position: absolute;;
+  background-color: #363636;
+  color: #FFFFFF;
+  border-color: #8685E7;
 }
 ::backdrop {
-  background-color: #452483;
-  opacity: 0.45;
+  background-color: #9004fc;
+  opacity: 0.25;
 }
 
 </style>
