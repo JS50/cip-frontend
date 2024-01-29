@@ -4,7 +4,6 @@ import {computed} from 'vue'
 import todoListHeader from "@/components/todoListHeader.vue";
 import axios from "axios";
 import TodoList from "@/components/todoList.vue";
-import DeleteTodos from "@/components/deleteTodos.vue";
 import PlaceholderTodos from "@/components/placeholderTodos.vue";
 import EmptyTodos from "@/components/emptyTodos.vue";
 
@@ -43,7 +42,6 @@ const noTodos = computed( () => {
       <div v-else-if="!noTodos">
         <todoList title="Offen" :todos="openTodos"/>
         <todoList title="Abgeschlossen" :todos="doneTodos"/>
-        <delete-todos/>
       </div>
     </div>
     <div v-else-if="isError">
