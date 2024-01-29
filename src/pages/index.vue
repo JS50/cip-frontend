@@ -13,7 +13,7 @@ const { isError, data:allTodosRef, error } = useQuery({
   staleTime: 1000 * 60 * 60,
   queryKey: ['todos'],
   queryFn: ( async () => {
-    return (await axios.get('http://127.0.0.1:89/todos')).data;
+    return (await axios.get('http://127.0.0.1:89/todos/')).data;
   })
 });
 
@@ -47,10 +47,10 @@ const noTodos = computed( () => {
       </div>
     </div>
     <div v-else-if="isError">
-      <placeholder-todos :message="error.message" :big-text="true"/>
+      <placeholder-todos :message="error.message"/>
     </div>
     <div v-else>
-      <placeholder-todos message="Todos are loading.." :big-text="true"/>
+      <placeholder-todos message="Todos are loading.."/>
     </div>
   </main>
 </template>
@@ -59,7 +59,7 @@ const noTodos = computed( () => {
 main{
   background: #121212;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 }
 
   #div3 {

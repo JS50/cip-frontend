@@ -1,5 +1,4 @@
 <script setup>
-import favicon from "/favicon.ico"
 import {ref} from "vue";
 import {useMutation, useQueryClient} from "@tanstack/vue-query";
 import axios from "axios";
@@ -37,83 +36,70 @@ let errorMessage = ref('');
 </script>
 
 <template>
-  <div id="div1">
-    <VImg
-        :src="favicon"
-        max-width="30"
-        max-height="30"
+  <div class="d-flex justify-center align-center mt-12">
+    <img
+        src="src/assets/sw-icon-purple%201.svg"
+        width="27"
+        height="35"
+        alt=""
     />
-    <a id="a1"> TODO </a>
+    <a id="title" class="ml-2"> TODO </a>
   </div>
 
-  <div class="mb-3" id="div2">
+  <div class="d-flex justify-center align-center ga-4">
     <input
+        id="inputTodoName"
+        class="pt-2 pr-4 pb-2 pl-4"
         type="text"
-        class="form-control"
         v-model=newTodoName
-        id="input1"
-        size="27"
+        size=""
         placeholder="Neuer Task.."
     />
-    <button id="button1" class="icon-button" @click = "addTodo()"></button>
+    <button id="submitButton" @click = "addTodo()"></button>
   </div>
-  <div id="div3" v-if="errorMessage">
-    <a id="a2">{{ errorMessage }}</a>
+  <div class="d-flex align-center justify-center" v-if="errorMessage">
+    <a id="errorMessage">{{ errorMessage }}</a>
   </div>
 </template>
 
 <style scoped>
-
-#div1 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: center;
-  margin-right: 20px;
-  margin-top: 15px;
-}
-
-#a1{
+#title{
   font-family: Poppins,sans-serif;;
-  font-weight: bold;
-  color: white;
-}
-#div2{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: #FFFFFF;
 }
 
-#input1{
-  color:grey;
-  outline: solid;
-  outline-width: thin;
-  border-radius: 3px;
-  padding: 5px 12px;
-  resize: none;
-  margin-top: 15px;
-  margin-bottom: -26px;
-  margin-left: -3px;
+#inputTodoName{
+  color:#B9B9B9DE;
+  opacity: 0.87;
+  font-family: Poppins, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 27.09px;
+
+  border-color: #979797;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+
+  width: 291px;
+  min-height: 43px;
 }
 
-#button1{
-  background-image:url("/favicon.ico") ;
-  background-size: 23px;
-  width: 22px;
-  height: 22px;
-  //margin-top: 18px;
-  margin-bottom: -38.5px;
-  margin-left: -10px;
+#submitButton{
+  background-image:url("/src/assets/send.svg") ;
+  width: 24px;
+  height: 24px;
 }
 
-#div3{
-  margin-left: 20px;
-  margin-top: 5px;
-  margin-bottom: -16px;
-}
-#a2{
-  color: #a902f8;
+#errorMessage{
+  color: #9004fc;
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 16.5px;
 }
 
 </style>

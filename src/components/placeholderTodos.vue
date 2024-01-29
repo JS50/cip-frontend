@@ -1,36 +1,24 @@
 <script setup>
 import favicon from "/favicon.ico"
 
-const props = defineProps(['message', 'bigText']);
+const props = defineProps(['message']);
 
 </script>
 
 <template>
-  <div id="div1">
+  <div class="d-flex justify-center align-center flex-column pt-16">
     <img :src="favicon" alt="" width="100">
-    <h1 v-if="bigText" id="text"> {{ message }} </h1>
-    <a v-else id="text"> {{ message }} </a>
+    <h1 id="text" class="pa-6"> {{ message }} </h1>
   </div>
 </template>
 
 <style scoped>
-@font-face {
-  font-family: poppinsRegular;
-  src: url("/fonts/Poppins/Poppins-Regular.woff2");
-}
-#div1{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-  margin-top: 50px;
-
-}
 
 #text{
-  font-family: poppinsRegular;
-  padding-top: 20px;
-  color: white;
+  font-family: Poppins, sans-serif;
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 30.1px;
 }
 
 </style>

@@ -58,16 +58,19 @@ const showDialog = (todoId) => {
 
 </script>
 <template>
-  <div id="div1" v-if="showTodos">
-    <a id="todoCategoryTitle"> {{ title }}</a>
-    <v-card
-        id="todoCard"
-        class="rounded mb-4"
-        color="#363636"
-        height="72"
-        width="327"
-        v-for="(todo) in todos"
-    >
+  <div v-if="showTodos">
+    <div id="categoryDiv" class="mb-1">
+      <a id="todoCategoryTitle"> {{ title }}</a>
+    </div>
+    <div class="d-flex flex-column justify-center align-center">
+      <v-card
+          id="todoCard"
+          class="mb-4"
+          color="#363636"
+          height="72"
+          width="327"
+          v-for="(todo) in todos"
+      >
         <template #title>
           <a
               id="todoTitle"
@@ -80,12 +83,14 @@ const showDialog = (todoId) => {
           </a>
         </template>
         <template v-slot:prepend>
-            <input id="checkbox"  type="checkbox" :key="todo.id" :checked="todo.done" @input="toggleDone(todo.id)">
+          <input id="checkbox" type="checkbox" :key="todo.id" :checked="todo.done" @input="toggleDone(todo.id)">
         </template>
         <template v-slot:append>
           <button id="deleteButton" :key="todo.id" @click = "showDialog(todo.id)"></button>
         </template>
-    </v-card>
+      </v-card>
+    </div>
+
 
   </div>
   <dialog-new ref="dialog">
@@ -124,9 +129,9 @@ input[type="checkbox"]:checked{
   background-position: center;
 }
 
-
 #todoCard{
   border-width: 1.5px;
+  border-radius: 4px;
 }
 #todoTitle{
   font-family: Lato, sans-serif;
