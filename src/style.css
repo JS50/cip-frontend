@@ -1,0 +1,448 @@
+@font-face {
+    font-family: "Poppins";
+    font-weight: 100;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("/fonts/Poppins/Poppins-Thin.woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 200;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("/fonts/Poppins/Poppins-ExtraLight.woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 300;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("/fonts/Poppins/Poppins-Light.woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("/fonts/Poppins/Poppins-Regular.woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("/fonts/Poppins/Poppins-Medium.woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("/fonts/Poppins/Poppins-SemiBold.woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 700;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("/fonts/Poppins/Poppins-Bold.woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 800;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("/fonts/Poppins/Poppins-ExtraBold.woff2");
+}
+
+@font-face {
+    font-family: "Poppins";
+    font-weight: 900;
+    font-style: normal;
+    font-display: auto;
+    unicode-range: U+000-5FF;
+    src: url("/fonts/Poppins/Poppins-Black.woff2");
+}
+
+.sw-x-large-title-bold {
+    font-family: Poppins, sans-serif;
+    font-size: 26px;
+    line-height: 39px;
+    font-weight: bold;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-large-title-bold {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.sw-small-title-bold {
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: bold;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-body-large-bold {
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-small-caption-bold {
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: bold;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-x-large-title {
+    font-family: Poppins, sans-serif;
+    font-size: 26px;
+    line-height: 39px;
+    font-weight: 500;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-large-title {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.sw-small-title {
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-body-large-medium {
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-body-base-medium {
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 500;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-small-caption-medium {
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-x-small-caption-medium {
+    font-family: Poppins, sans-serif;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 500;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-tabbar {
+    font-family: Poppins, sans-serif;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 500;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-body-large {
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-body-base {
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-small-caption {
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-x-small-caption {
+    font-family: Poppins, sans-serif;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgb(var(--v-theme-on-background))
+}
+
+.sw-text-grey-4 {
+    color: rgb(var(--sw-grey-4)) !important;
+}
+
+.sw-text-white {
+    color: rgb(var(--sw-white)) !important;
+}
+
+.sw-text-error {
+    color: rgb(var(--sw-error)) !important;
+}
+
+.sw-text-brand-primary {
+    color: rgb(var(--sw-brand-primary)) !important;
+}
+
+.sw-text-dark-border {
+    color: rgb(var(--sw-dark-border)) !important;;
+}
+
+.sw-eighty-opacity {
+    opacity: 87%;
+}
+
+.sw-medium-weight {
+    font-weight: 300;
+}
+
+body {
+    background: #121212;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.addIcon, .deleteIcon {
+    transition: 0.5s;
+    opacity: 75%;
+}
+
+.addIcon:hover, .deleteIcon:hover {
+    filter: hue-rotate(10deg) brightness(120%);
+    opacity: 100%;
+}
+
+.deleteTodo {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+/* Hide the browser's default checkbox */
+.taskContainer input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.sw-todo-checkbox {
+    transition: 0.25s;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border-radius: 100%;
+    border: 2px solid #ffffffca;
+    position: relative;
+    cursor: pointer;
+}
+
+/* On mouse-over, add a grey background color */
+.taskContainer:hover input ~ .sw-todo-checkbox:hover {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.taskContainer input[type='checkbox']:checked ~ .sw-todo-checkbox {
+    background-color: #8685E7;
+    border-color :#8685E7;
+}
+
+.taskContainer input[type='checkbox']:checked ~ .sw-todo-checkbox:hover {
+    background-color: #a4a1e7;
+    border-color :#a4a1e7;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.sw-todo-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.taskContainer input[type='checkbox']:checked ~ .sw-todo-checkbox:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.taskContainer .sw-todo-checkbox:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.taskContainer {
+    display: flex;
+    align-items: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.newTodo {
+    width: 286px;
+    height: 43px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
+#todoInput {
+    margin: auto;
+    display: inline-flex;
+}
+
+#todoHeader {
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+#todoBody {
+    margin: auto;
+    text-align: left;
+}
+
+.emptyTodo {
+    text-align: center;
+    font-weight: 400;
+    margin: auto;
+}
+
+.headerLogo {
+    margin-right: 10px;
+}
+
+#tasks {
+    padding-top: 10px;
+}
+
+#taskData {
+    max-width: 70%;
+    flex: 1
+}
+
+#taskData p {
+    word-break: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.taskContainer {
+    background-color: #363636;
+    width: 327px;
+    height: 72px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+#tasks .taskCategory {
+    margin-bottom: 25px;
+}
+
+.iphoneNotch {
+    width: 220px;
+    background-color: black;
+    height: 30px;
+    position: absolute;
+    margin: auto;
+    top: -2px;
+    left: calc(50% - 110px);
+    border-radius: 0 0 40px 40px;
+}
+
+#statusBar {
+    margin: auto;
+    width: 375px;
+    height: 44px;
+}
+
+#statusIcons {
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#rightIcons svg {
+    margin-right: 5px;
+}
+
+:root {
+    --sw-success: 67,175,42;
+    --sw-brand-primary: 143, 0, 255;
+    --sw-error: 234, 97, 89;
+    --sw-alert: 251, 147, 77;
+    --sw-black: 0,0,0;
+    --sw-white: 255,255,255;
+    --sw-grey-1: 247, 248, 248;
+    --sw-grey-2: 243, 243, 243;
+    --sw-grey-2-5: 234, 234, 234;
+    --sw-grey-3: 205, 205, 205;
+    --sw-grey-4: 143, 143, 143;
+    --sw-dark-bg: 6, 6, 6;
+    --sw-dark-border: 66, 66, 66;
+    --sw-dark-line: 33, 33, 33;
+}
