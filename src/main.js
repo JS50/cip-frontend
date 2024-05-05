@@ -6,6 +6,7 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { VueQueryPlugin } from "@tanstack/vue-query";
+
 import './style.css'
 
 const vuetify = createVuetify({
@@ -15,10 +16,8 @@ const vuetify = createVuetify({
 
 const app = createApp(App);
 
-
 app.use(VueQueryPlugin);
 
 app.use(router);
 app.use(vuetify);
-
 app.mount('#app');

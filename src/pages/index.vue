@@ -3,31 +3,37 @@ import sendIcon from "@/assets/sw-send-icon.svg";
 import smallLogo from "@/assets/sw-logo-small.svg";
 import emptyLogo from "@/assets/sw-todo-empty.svg";
 import taskContainer from "../components/taskContainer.vue";
-import { useQuery } from "@tanstack/vue-query";
-
+import { useQuery, useMutation, useQueryClient } from "@tanstack/vue-query";
 import { ref, computed } from 'vue';
+import axios from "axios";
 
-const { isLoading, isFetching, isError, data, error } = useQuery({
-  queryKey: ['todos']
+const queryClient = useQueryClient();
+
+const { isLoading, isFetching, data: todoQuery, error } = useQuery({
+  queryKey: ['todos'],
+  queryFn: async () => {
+    return (await axios.get('http://localhost/todos')).data;
+  }
 });
 
-let id = 0;
-const tasks = ref([
-  {id: id++, task: "Test Todo 1", completed: false, date: new Date()},
-  {id: id++, task: "Test Todo 2", completed: true, date: new Date()},
-  {id: id++, task: "Test Todo 3", completed: false, date: new Date()},
-  {id: id++, task: "Test Todo 4", completed: false, date: new Date()}
-]);
-
-// Sort tasks by value
-tasks.value = tasks.value.sort((a, b) => {return a.date - b.date});
+// I actually hate this but I'm noob so I don't know better way
+function invalidateTodosQuery() { queryClient.invalidateQueries({ queryKey: ['todos'] }); }
+const { mutate: postTodo } = useMutation({
+  mutationFn: (newTodo) => axios.post('http://localhost/todos', newTodo), onSuccess: invalidateTodosQuery
+});
+const { mutate: deleteTodo } = useMutation({
+  mutationFn: (task) => axios.delete(`http://localhost/todos/${task.id}`), onSuccess: invalidateTodosQuery
+});
+const { mutate: updateTodo } = useMutation({
+  mutationFn: (task) => axios.put(`http://localhost/todos/${task.id}`, task), onSuccess: invalidateTodosQuery
+});
 
 const completedTasks = computed(() => {
-  return tasks.value.filter((t) => t.completed === true);
+  return todoQuery.value.filter((t) => t.completed === 1);
 });
 
 const incompleteTasks = computed(() => {
-  return tasks.value.filter((t) => t.completed === false);
+  return todoQuery.value.filter((t) => t.completed === 0);
 });
 
 const newTodo = ref('');
@@ -37,6 +43,7 @@ clock();
 function clock() {
   const today = new Date();
   let h = today.getHours();
+  h = h === 0 ? "0" + h : h;
   let m = today.getMinutes();
   // Pad m if needed
   m = m < 10 ? "0" + m : m;
@@ -47,11 +54,18 @@ function clock() {
 
 function addTodo() {
   if (newTodo.value.length === 0) return;
-  tasks.value.push({id: id++, task: newTodo.value, completed: false, date: new Date()});
+  postTodo({task: newTodo.value, completed: 0});
 }
 
-function removeTodo(task) {
-  tasks.value = tasks.value.filter((t) => t !== task);
+function updateCompleted(task) {
+  const complete = Number(!task.completed);
+  updateTodo({id: task.id, completed: complete});
+}
+
+function deleteAllTodos(tasks) {
+  for (let i = 0; i < tasks.length; i++) {
+    deleteTodo(tasks[i]);
+  }
 }
 
 </script>
@@ -84,17 +98,15 @@ function removeTodo(task) {
           <VImg :src="sendIcon" class="addIcon pointer" width="24px" @click="addTodo"/>
         </div>
         
-        <div v-if="tasks.length === 0" id="emptyContainer">
+        <div v-if="!todoQuery || todoQuery.length == 0" id="emptyContainer">
           <VImg class="emptyTodo" :src="emptyLogo" width="227px" />
           <p class="sw-large-title sw-text-white emptyTodo">What do you want to do today?</p>
         </div>
         
-        <div v-if="tasks.length > 0" id="tasks">
-          <taskContainer v-if="incompleteTasks.length > 0" :tasks="incompleteTasks" :title="'Todo'" />
-          <taskContainer v-if="completedTasks.length > 0" :tasks="completedTasks" :title="'Completed'" @remove-tasks="removeTodo" />
+        <div v-if="todoQuery" id="tasks">
+          <taskContainer v-if="incompleteTasks.length > 0" :tasks="incompleteTasks" :title="'Todo'" @update-complete="updateCompleted" @delete-all="deleteAllTodos" @remove-tasks="deleteTodo" />
+          <taskContainer v-if="completedTasks.length > 0" :tasks="completedTasks" :title="'Completed'" @update-complete="updateCompleted" @delete-all="deleteAllTodos" @remove-tasks="deleteTodo" />
         </div>
-        
       </div>
-
   </main>
 </template>

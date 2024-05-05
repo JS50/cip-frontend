@@ -430,6 +430,19 @@ body {
     margin-right: 5px;
 }
 
+.deleteButton {
+    transition: 0.5s;
+    margin-left: 5px;
+    background-color: #8f00ff;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 25%;
+}
+
+.deleteButton:hover {
+    background-color: #a241eb;
+}
+
 :root {
     --sw-success: 67,175,42;
     --sw-brand-primary: 143, 0, 255;
