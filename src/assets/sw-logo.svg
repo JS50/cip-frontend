@@ -1,0 +1,10 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 310" width="1500" height="310">
+	<title>sw-horizontal-color-black-svg</title>
+	<style>
+		.s0 { fill: #8f00ff } 
+	</style>
+	<g id="Layer_1-2">
+		<path class="s0" d="m217.5 217.6c8 3.6 16.9-2.3 16.9-11v-99.3c0-4.7-2.7-9-7-11l-210.5-95.2c-7.9-3.6-16.9 2.2-16.9 10.9v100.3c0 4.7 2.8 9 7.1 10.9z"/>
+		<path class="s0" d="m7.5 209c-4.5 1.8-7.5 6.2-7.5 11.1v76.9c0 8.4 8.4 14.2 16.3 11.2l139.1-53.1c10-3.8 10.4-17.8 0.6-22.2l-93.6-42c-2.9-1.3-6.3-1.4-9.3-0.1z"/>
+	</g>
+</svg>
